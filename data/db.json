@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "welcome to the new blog",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "top 5 CSS tips",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
+    },
+    {
+      "title": "could not create post",
+      "body": "could not create post not create post could not create post ",
+      "tags": [
+        "html",
+        "css",
+        "js"
+      ],
+      "id": 3
+    },
+    {
+      "title": "Lets try to build a Vue SPA",
+      "body": "So what is actually a SPA? And more specifically what is a Vue SPA? This is something that I will try to answer in this blog.",
+      "tags": [
+        "vue",
+        "html",
+        "css",
+        "js"
+      ],
+      "id": 4
+    }
+  ]
+}
