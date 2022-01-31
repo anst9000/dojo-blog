@@ -25,6 +25,7 @@
 <script>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { projectFirestore, timestamp } from '../firebase/config'
 
 export default {
   setup() {
@@ -50,16 +51,11 @@ export default {
       const post = {
         title: title.value,
         body: body.value,
-        tags: tags.value
+        tags: tags.value,
+        createdAt: timestamp()
       }
 
-      await fetch('http://localhost:3000/posts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(post)
-      })
+      const res = await projectFirestore.collection('posts').add(post)
 
       router.push({ name: 'Home' })
     }
@@ -96,24 +92,26 @@ export default {
     position: relative;
     font-size: 20px;
     color: white;
+    transform: rotateZ(-1.5deg);
     margin-bottom: 10px;
   }
   label::before {
     content: "";
     display: block;
     width: 100%;
-    height: 125%;
+    height: 130%;
     margin-top: -3px;
     background: #ff8800;
     position: absolute;
     z-index: -1;
     padding-right: 40px;
     left: -30px;
-    transform: rotateZ(-1.5deg);
+    /* transform: rotateZ(-1.5deg); */
     border-radius: 7px;
   }
   button {
     display: block;
+    width: 25%;
     margin-top: 30px;
     background: #ff8800;
     color: white;
@@ -121,8 +119,22 @@ export default {
     padding: 8px 16px;
     font-size: 18px;
     transform: rotateZ(-1.5deg);
+    box-shadow: 2px 3px 5px #444;
+    border: 1px solid #444;
     border-radius: 7px;
   }
+
+  button {
+    position: relative;
+  }
+
+  button:active {
+    box-shadow: none;
+    top: 5px;
+    background: #ffaa22;
+  }
+
+
   .pill {
     display: inline-block;
     margin: 10px 10px 0 0;

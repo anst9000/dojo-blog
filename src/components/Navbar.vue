@@ -39,6 +39,10 @@ export default {
     background-size: 81.94px 57.38px;
 }
 
+  .router-link-exact-active {
+    /* border: 1px solid #444; */
+  }
+
   nav {
     display: flex;
   }
@@ -56,8 +60,22 @@ export default {
     box-shadow: 2px 3px 5px #ff8800;
     border-radius: 7px;
   }
+
+  .link a:hover {
+    color: #999;
+    background-color: rgba(255, 136, 0, .05);
+    text-decoration: none;
+    padding: 2px 7px;
+    margin-left: 20px;
+    border: 1px solid #ff8800;
+    box-shadow: 2px 3px 5px #ff8800;
+
+  }
+
   header a.router-link-active {
     color: #444;
+    border: 1px solid #444;
+    background-color: rgba(255, 136, 0, .25);
     font-weight: bold;
   }
 </style>
